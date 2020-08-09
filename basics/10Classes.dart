@@ -90,4 +90,10 @@ class Bike {
   }
 
   set setModel(String pModel) => model = pModel;
+
+  // Any General Method
+  int getCarLife(int currentYear) {
+    // can be positional / default / named /
+    return currentYear - year; // optional.
+  }
 }
