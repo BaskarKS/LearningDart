@@ -13,7 +13,8 @@ main() {
   // Dyamic Typed programming Language: type of variable is known at run time.
 
   /*
-    // all below defined data types are objects, we can even use 'null' to initialize the variable
+    // all below defined data types are objects, we can even use 'null' to
+     initialize the variable
     int
     double
     string
@@ -23,12 +24,13 @@ main() {
    */
 
   int amount1 = 100;
-  var amount2 =
-      200; // automatic type inferred based on passed value, cant change value type after definition
+  // automatic type inferred based on passed value, cant change value
+  //type after definition
+  var amount2 = 200;
   print('Amount One : $amount1, Amount Two : $amount2');
 
-  amount2 =
-      300; // can change the value, but cant change the value with different type
+  // can change the value, but cant change the value with different type
+  amount2 = 300; // cant assign 45.0 / false / 'hai' to "amount2"
   print('Value of Amount Two Changed : $amount2');
 
   double damount1 = 100;
@@ -50,9 +52,10 @@ main() {
       100; // this variable type is inferred at runtime, no compile time checks
   print('Weak Variable Initially : $weakVariable');
 
-  weakVariable =
-      "Changed to String"; // can change different type of value after its definition
-  // initially it was initialized with 'int' later in code its value is changed with 'string' type.
+  // can change different type of value after its definition
+  weakVariable = "Changed to String";
+  // initially it was initialized with 'int'(100) now its value is changed
+  // with 'string'(Changed to String) type.
   print('Weak Variable Changed : $weakVariable');
 
   weakVariable = null;
@@ -67,7 +70,8 @@ void createVariables() {
   // 1. using 'var'. (create a variable without specifying the data type)
   var isDef = true;
   print(isDef);
-  // 2. using 'dynamic' (can fit any object in this type, not inferred by compiler)
+  // 2. using 'dynamic' (can fit any object in this type, not inferred
+  // by compiler)
   dynamic value = 10;
   print(value);
   value = "hai"; // changed the value to string into the same variable
@@ -83,7 +87,9 @@ void createVariables() {
   print(onlyNumbers);
 
   //Checking some of the properties and Functions
+  print('Checking support functions for \'num\' datatype');
   print(onlyNumbers.toInt());
+  print(onlyNumbers.toDouble());
   print(onlyNumbers.toString());
   print("ceiling value : ${onlyNumbers.ceil()}");
 }

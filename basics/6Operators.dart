@@ -20,14 +20,15 @@ void main(List<String> args) {
   getVal = n?.num ?? 0; // if n is null then 0 is initialized to getVal
   print(getVal);
 
-  print('');
+  print('Checking ?? Operator:');
+  // LeftSideVal ?? RightSideVal => Use LeftSideVal if not null, otherwise RightSideVal
   int number;
   print(number ?? 100); // use the right side value if left side object is null
-  print(number);
+  print('default value is not set to number variable : $number');
 
   print('');
   print(number ??= 100); //if null, assign right side value to left and then use
-  print(number);
+  print('default value is set to number variable : $number');
 
   // TERNARY OPERATOR
   int val = 100;

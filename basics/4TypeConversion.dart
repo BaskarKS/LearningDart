@@ -1,8 +1,13 @@
+// classes int, double contains parse("string") which will convert
+// string to int / double
+
+// classes int, double contains toString() which will convert int / double
+// to string value
 void main(List<String> args) {
   // convert "String" to "int" using int class static method parse()
   var one = int.parse('23');
   print(one);
-  assert(one == 1); // verify the converted value, using inbuilt assert()
+  assert(one != 1); // verify the converted value, using inbuilt assert()
 
   // error: can pass only integer values
   // var getFromDouble = int.parse("112.11");
