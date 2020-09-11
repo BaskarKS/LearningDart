@@ -1,3 +1,5 @@
+import 'package:meta/meta.dart';
+
 main(List<String> args) {
   // Can create new instance of Car using "new Car() / Car()"
   var myCar = new Car();
@@ -24,6 +26,16 @@ main(List<String> args) {
   // Creating "Bike" object using named Constructor (YearMade())
   var yearBike = Bike.YearMade(1971);
   print(yearBike); //Year:1971, Model:null, Status:null
+
+  var truck =
+      Truck(); //with named params, can create object without params also
+  var newTruck = Truck(model: "Benz", status: true, year: 2020);
+
+  var van = Van(model: "Volvo", year: 1993);
+  var vanOne = Van(model: "Volvo", year: 1993, status: false);
+  var vanTwo = Van(); // allowed to create object but shows warnings
+  print(van);
+  print(vanTwo);
 }
 
 class Car {
@@ -32,6 +44,32 @@ class Car {
   bool status;
 }
 
+class Truck {
+  int year;
+  String model;
+  bool status;
+  // Default Constructor, fields defined in {} makes the fields use as named
+  // fields when constructing. To make certain fields as compulsory, prepend
+  // the fields with '@required'
+  Truck({this.model, this.year, this.status});
+}
+
+class Van {
+  int year;
+  String model;
+  bool status;
+  // Default Constructor, fields defined in {} makes the fields use as named
+  // fields when constructing. To make certain fields as compulsory, prepend
+  // the fields with '@required' to intimate the user as warnings. it doesnt
+  // force to pass the params when creating object, just show as warnings
+  Van({@required this.model, @required this.year, this.status});
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return 'Van :: year:${this.year} - model:${this.model} - status:${this.status}';
+  }
+}
 /*
 class Bike {
   int year;
@@ -55,7 +93,9 @@ class Bike {
 
   // User Defined Constructor
   Bike(this.model, this.year, this.status);
-  Bike.YearMade(this.year); // named constructor, accepts only "year" value.
+
+  // Named constructor, accepts only "year" value.
+  Bike.YearMade(this.year);
   // remaining parameters will be init with "null"
   Bike.Model(this.model);
 

@@ -33,14 +33,15 @@ class Animal {
 }
 
 class Dog extends Animal {
-  // Extending Base constructor, while object creation, this constructor is
-  // invoked first and then super() constructor is invoked
+  // Extending Base constructor, while object creation, super() constructor is
+  // invoked then this constructor is invoked
   Dog() : super() {
     print("Dog Class Constructor");
   }
 
-  // Extending Base named constructor, while object creation, this constructor is
-  // invoked first and then super() constructor is invoked
+  // Extending Base named constructor, while object creation, super()
+  // constructor is invoked first then this constructor is invoked
+
   Dog.myBaseClass() : super.myBaseClass() {
     print('Dog Class Named Constructor');
   }
